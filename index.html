@@ -9,8 +9,8 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #4a7c2b; /* 메뉴판 배경 녹색 */
-      color: #2f4f1f;
+      background-color: #F7DC6F; /* 세련된 노란색으로 변경! */
+      color: #333333; /* 글씨 기본색을 검정색 계열로 변경 */
       margin: 0;
       padding: 20px;
       display: flex;
@@ -21,26 +21,27 @@
     .menu-container {
       max-width: 700px;
       width: 100%;
-      background-color: #4a7c2b;
+      background-color: #F7DC6F; /* 세련된 노란색으로 변경! */
       padding: 20px;
       box-sizing: border-box;
     }
-    .main-title { /* 'Steak House Sandwich' 제목 스타일 - 박스 추가! */
-      background-color: white; /* 박스 배경색 */
-      color: #4a7c2b; /* 박스 안 글씨색 (짙은 녹색 계열) */
+    .main-title {
+      background-color: white; /* 배경색은 흰색 유지 */
+      color: #333333; /* 글씨색 검정색 계열로 변경 */
       font-weight: 900;
-      font-size: 2.5rem; /* 요청하신 2.5rem으로 수정 */
+      font-size: 2.5rem;
       text-align: center;
-      padding: 15px 30px; /* 박스 안 여백 */
-      border-radius: 15px; /* 박스 모서리 둥글게 */
-      margin: 0 auto 20px auto; /* 중앙 정렬 및 하단 여백 */
+      padding: 15px 30px;
+      border-radius: 15px;
+      margin: 0 auto 20px auto;
       letter-spacing: 4px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 박스 그림자 */
-      display: block; /* 블록 요소로 만들어서 width와 margin auto 적용 */
-      width: fit-content; /* 내용에 맞춰 너비 조절 */
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 25px rgba(255, 255, 255, 0.5); /* 밝고 반짝이는 그림자 효과! */
+      display: block;
+      width: fit-content;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* 텍스트에도 은은한 광원 효과 */
     }
     h2 { /* 'MENU' 제목 스타일 */
-      color: white;
+      color: #333333; /* 글씨색 검정색 계열로 변경 */
       font-weight: 900;
       font-size: 2.5rem;
       text-align: center;
@@ -51,7 +52,7 @@
     .divider {
       width: 120px;
       height: 10px;
-      background-color: #eeb6c1; /* 연분홍색 */
+      background-color: #eeb6c1; /* 연분홍색은 유지 */
       margin: 0 auto 30px auto;
       border-radius: 5px;
     }
@@ -62,7 +63,7 @@
       justify-content: center;
     }
     .menu-section {
-      background-color: white;
+      background-color: white; /* 박스 배경색은 흰색 유지 */
       border-radius: 12px;
       padding: 20px 25px;
       width: 300px;
@@ -72,8 +73,8 @@
       margin-bottom: 30px;
     }
     .menu-section h3 {
-      background-color: #eeb6c1;
-      color: #4a7c2b;
+      background-color: #eeb6c1; /* 연분홍색은 유지 */
+      color: #333333; /* 글씨색 검정색 계열로 변경 */
       font-weight: 700;
       font-size: 1.2rem;
       padding: 5px 15px;
@@ -85,43 +86,43 @@
       left: 20px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     }
-    .menu-item { /* 메뉴 항목 전체를 감싸는 div */
+    .menu-item {
       padding: 10px 0;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #dddddd; /* 테두리색 약간 조정 */
     }
     .menu-item:last-child {
       border-bottom: none;
     }
-    .menu-item-name-price { /* 메뉴 이름과 가격을 감싸는 컨테이너 */
+    .menu-item-name-price {
       display: flex;
       justify-content: space-between;
-      align-items: flex-end; /* 가격이 아래로 살짝 내려가지 않게 정렬 */
+      align-items: flex-end;
     }
-    .menu-item-name { /* 메뉴 이름 스타일 */
-      font-size: 1.3rem; /* 메뉴 이름 글씨 더 크게 */
-      font-weight: 700; /* 더 두껍게 */
-      color: #4a7c2b;
+    .menu-item-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #333333; /* 글씨색 검정색 계열로 변경 */
       line-height: 1.2;
-      flex-grow: 1; /* 이름이 길어지면 공간을 더 차지하도록 */
+      flex-grow: 1;
     }
-    .menu-item-price { /* 메뉴 가격 스타일 */
-      font-size: 1.3rem; /* 가격 글씨 더 크게 */
-      font-weight: 700; /* 더 두껍게 */
-      color: #4a7c2b;
-      margin-left: 10px; /* 이름과 가격 사이 간격 */
+    .menu-item-price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #333333; /* 글씨색 검정색 계열로 변경 */
+      margin-left: 10px;
     }
-    .menu-description { /* 메뉴 설명 스타일 */
-      font-size: 0.95rem; /* 설명 글씨 크기 */
-      color: #71975e; /* 설명 색상 조절 */
-      margin-top: 5px; /* 메뉴명과의 간격 */
+    .menu-description {
+      font-size: 0.95rem;
+      color: #555555; /* 설명 글씨는 좀 더 부드러운 검정 계열로 변경 */
+      margin-top: 5px;
       line-height: 1.4;
     }
   </style>
 </head>
 <body>
   <div class="menu-container">
-    <h1 class="main-title">Steak House Sandwich</h1> <!-- 박스 안에 들어간 최상위 제목 -->
-    <h2>MENU</h2> <!-- 기존 h1이 h2로 변경 -->
+    <h1 class="main-title">Steak House Sandwich</h1>
+    <h2>MENU</h2>
     <div class="divider"></div>
 
     <!-- 1페이지: MAIN, SIDE -->
@@ -270,8 +271,8 @@
 
         <div class="menu-item">
           <div class="menu-item-name-price">
-            <span class="menu-item-name">Yuzu</span>
-            <span class="menu-item-price">$3</span>
+            <span class="menu-item-name">Matcha Latte</span>
+            <span class="menu-item-price">$5</span>
           </div>
           <p class="menu-description"></p>
         </div>
