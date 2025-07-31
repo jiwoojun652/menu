@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Steak House Sandwich Menu</title>
+  <!-- 구글 폰트 Poppins 불러오기 -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #4a7c2b; /* 메뉴판 배경 녹색 */
+      color: #2f4f1f;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+    .menu-container {
+      max-width: 700px;
+      width: 100%;
+      background-color: #4a7c2b;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .main-title { /* 'Steak House Sandwich' 제목 스타일 - 박스 추가! */
+      background-color: white; /* 박스 배경색 */
+      color: #4a7c2b; /* 박스 안 글씨색 (짙은 녹색 계열) */
+      font-weight: 900;
+      font-size: 2.5rem; /* 요청하신 2.5rem으로 수정 */
+      text-align: center;
+      padding: 15px 30px; /* 박스 안 여백 */
+      border-radius: 15px; /* 박스 모서리 둥글게 */
+      margin: 0 auto 20px auto; /* 중앙 정렬 및 하단 여백 */
+      letter-spacing: 4px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 박스 그림자 */
+      display: block; /* 블록 요소로 만들어서 width와 margin auto 적용 */
+      width: fit-content; /* 내용에 맞춰 너비 조절 */
+    }
+    h2 { /* 'MENU' 제목 스타일 */
+      color: white;
+      font-weight: 900;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 10px;
+      letter-spacing: 3px;
+    }
+    .divider {
+      width: 120px;
+      height: 10px;
+      background-color: #eeb6c1; /* 연분홍색 */
+      margin: 0 auto 30px auto;
+      border-radius: 5px;
+    }
+    .menu-sections {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .menu-section {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px 25px;
+      width: 300px;
+      box-sizing: border-box;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      position: relative;
+      margin-bottom: 30px;
+    }
+    .menu-section h3 {
+      background-color: #eeb6c1;
+      color: #4a7c2b;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding: 5px 15px;
+      border-radius: 20px;
+      width: fit-content;
+      margin: 0 0 15px 0;
+      position: absolute;
+      top: -15px;
+      left: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    }
+    .menu-item { /* 메뉴 항목 전체를 감싸는 div */
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    .menu-item:last-child {
+      border-bottom: none;
+    }
+    .menu-item-name-price { /* 메뉴 이름과 가격을 감싸는 컨테이너 */
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end; /* 가격이 아래로 살짝 내려가지 않게 정렬 */
+    }
+    .menu-item-name { /* 메뉴 이름 스타일 */
+      font-size: 1.3rem; /* 메뉴 이름 글씨 더 크게 */
+      font-weight: 700; /* 더 두껍게 */
+      color: #4a7c2b;
+      line-height: 1.2;
+      flex-grow: 1; /* 이름이 길어지면 공간을 더 차지하도록 */
+    }
+    .menu-item-price { /* 메뉴 가격 스타일 */
+      font-size: 1.3rem; /* 가격 글씨 더 크게 */
+      font-weight: 700; /* 더 두껍게 */
+      color: #4a7c2b;
+      margin-left: 10px; /* 이름과 가격 사이 간격 */
+    }
+    .menu-description { /* 메뉴 설명 스타일 */
+      font-size: 0.95rem; /* 설명 글씨 크기 */
+      color: #71975e; /* 설명 색상 조절 */
+      margin-top: 5px; /* 메뉴명과의 간격 */
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-container">
+    <h1 class="main-title">Steak House Sandwich</h1> <!-- 박스 안에 들어간 최상위 제목 -->
+    <h2>MENU</h2> <!-- 기존 h1이 h2로 변경 -->
+    <div class="divider"></div>
+
+    <!-- 1페이지: MAIN, SIDE -->
+    <div class="menu-sections">
+      <section class="menu-section" id="main">
+        <h3>MAIN</h3>
+        <div class="menu-item">
+          <div class="menu-item-name-price">
+            <span class="menu-item-name">Stackhouse Steak Sandwich</span>
+            <span class="menu-item-price">$12</span>
+          </div>
+          <p class="menu-description">Sirloin Med. Rare, crispy onion, chimichurri sauce.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-name-price">
+            <span class="menu-item-name">French Dip Sandwich</span>
+            <span class="menu-item-price">$15</span>
+          </div>
+          <p class="menu-description">Provolone, au jus, horseradish.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-name-price">
+            <span class="menu-item-name">Dry Aged Brisket Sandwich</span>
+            <span class="menu-item-price">$38</span>
+          </div>
+          <p class="menu-description">Provolone, au jus, horseradish.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-name-price">
+            <span class="menu-item-name">Steak TarTare Open Sandwich</span>
+            <span class="menu-item-price">$12</span>
+          </div>
+          <p class="menu-description">Cornichons, capers, parsley, baguette, raw.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-name-price">
+            <span class="menu-item-name">Egg & Steak breakfast Sandwich</span>
+            <span class="menu-item-price">$12</span>
+          </div>
+          <p class="menu-description">Egg and steak breakfast sandwich.</p>
+        </div>
+      </section>
+
+      <section class="menu-section" id="side">
+        <h3>SIDE</h3>
+        <div class="menu-item">
+          <div class="menu-item-name-price">
+            <span class="menu-item-name">Caesar Salad</span>
+            <span class="menu-item-price">$8</span>
+          </div>
+          <p class="menu-description">Anchovy, crouton, housemade dressing. + add chicken $4.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-name-price">
+            <span class="menu-item-name">French Onion Soup</span>
+            <span class="menu-item-price">$8</span>
+          </div>
+          <p class="menu-description">Caramelized onion, gruyere cheese, crouton, beef broth.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-name-price">
+            <span class="menu-item-name">Potato Chips</span>
+            <span class="menu-item-price">$5</span>
+          </div>
+          <p class="menu-description">Truffle aioli.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-name-price">
+            <span class="menu-item-name">Smashed Potato</span>
+            <span class="menu-item-price">$5</span>
+          </div>
+          <p class="menu-description"></p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-name-price">
+            <span class="menu-item-name">Veg. Pickles</span>
+            <span class="menu-item-price">$3</span>
+          </div>
+          <p class="menu-description"></p>
+        </div>
+      </section>
+    </div>
+
+    <!-- 2페이지: SWEET, DRINK -->
+    <div class="menu-sections">
+      <section class="menu-section" id="sweet">
+        <h3>SWEET</h3>
+        <div class="menu-item">
+          <div class="menu-item-name-price">
+            <span class="menu-item-name">Ice Cream</span>
+            <span class="menu-item-price">$5</span>
+          </div>
+          <p class="menu-description"></p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-name-price">
+            <span class="menu-item-name">Cheesecake</span>
+            <span class="menu-item-price">$5</span>
+          </div>
+          <p class="menu-description">+ add strawberry $2.</p>
+        </div>
+      </section>
+
+      <section class="menu-section" id="drink">
+        <h3>DRINK</h3>
+        <div class="menu-item">
+          <div class="menu-item-name-price">
+            <span class="menu-item-name">Pop, Water, OJ</span>
+            <span class="menu-item-price">$3</span>
+          </div>
+          <p class="menu-description"></p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-name-price">
+            <span class="menu-item-name">Americano</span>
+            <span class="menu-item-price">$3.5</span>
+          </div>
+          <p class="menu-description"></p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-name-price">
+            <span class="menu-item-name">Hot Chocolate, Tea</span>
+            <span class="menu-item-price">$3.5</span>
+          </div>
+          <p class="menu-description"></p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-name-price">
+            <span class="menu-item-name">Latte</span>
+            <span class="menu-item-price">$5</span>
+          </div>
+          <p class="menu-description"></p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-name-price">
+            <span class="menu-item-name">Yuzu</span>
+            <span class="menu-item-price">$3</span>
+          </div>
+          <p class="menu-description"></p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-name-price">
+            <span class="menu-item-name">Zero Proof Beer</span>
+            <span class="menu-item-price">$6</span>
+          </div>
+          <p class="menu-description"></p>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
